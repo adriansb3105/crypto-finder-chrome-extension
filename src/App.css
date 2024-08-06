@@ -1,0 +1,63 @@
+/*STOCK TICKERS*/
+.tickers-scroll {
+  width: 50%;
+  font-size: 15px;
+  padding-block: 8px;
+  border-block: 1px solid;
+  overflow: hidden;
+  user-select: none;
+
+  --gap: 20px;
+  display: flex;
+  gap: var(--gap);
+}
+
+.tickers-scroll ul {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+
+  animation: scroll 20s linear infinite;
+}
+
+.tickers-scroll:hover ul {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+.tickers-scroll .company,
+.tickers-scroll .price {
+  font-weight: bold;
+}
+
+.tickers-scroll .price {
+  margin-inline: 4px;
+}
+
+.tickers-scroll .plus::before {
+  content: '↑';
+}
+
+.tickers-scroll .minus::before {
+  content: '↓';
+}
+
+.tickers-scroll .plus .change,
+.tickers-scroll .plus::before {
+  color: #089981;
+}
+
+.tickers-scroll .minus .change,
+.tickers-scroll .minus::before {
+  color: #f23645;
+}
+

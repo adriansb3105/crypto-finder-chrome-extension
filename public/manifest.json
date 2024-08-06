@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Crypto Finder",
+    "description": "This extension allows you to check the Top Gainers cryptocurrencies going on right now",
+    "version": "1.0.0",
+    "icons": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "64": "images/icon64.png",
+      "128": "images/icon128.png"
+    },
+    "background": {
+      "service_worker": "service-worker.js",
+      "type": "module"
+    },
+    "action": {
+      "default_popup": "index.html"
+    },
+    "permissions": [
+      "scripting"
+    ],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ]
+  }
